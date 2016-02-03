@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.i18n.encoding" value="UTF-8"></constant>
+	<constant name="struts.action.extension" value="action"></constant>
+	<constant name="struts.serve.static.browserCache" value="false"></constant>
+	<package name="pmsystem" extends="struts-default">
+		<action name="login" method="login" class="com.pm.action.LoginAction">
+			<result name="success">/jsps/home.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+		<action name="regist" method="regist" class="com.pm.action.RegistAction">
+			<result name="success">/jsps/home.jsp</result>
+			<result name="error">/regist.jsp</result>
+		</action>
+
+
+		<!-- 配置查看范围的action -->
+		<action name="viewScope" method="viewScope" class="com.pm.action.ScopeViewAction">
+			<result name="success">/jsps/scope.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+
+		<action name="changeScope" method="changeScope" class="com.pm.action.ScopeChangeAction">
+			<result name="success">/jsps/scopeChange.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<action name="confirmScope" method="confirmScope" class="com.pm.action.ScopeChangeConfirmAction">
+			<result name="success">/jsps/scope.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+
+
+		<!-- 配置查看任务的action -->
+		<action name="viewTask" method="viewTask" class="com.pm.action.TaskViewAction">
+
+			<result name="success">/jsps/task.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<action name="addTask" method="addTask" class="com.pm.action.TaskAddAction">
+
+			<result name="success">/jsps/taskAdd.jsp</result>
+		</action>
+		<action name="changeTask" method="changeTask"
+			class="com.pm.action.TaskAddConfirmAction">
+
+			<result name="success">/jsps/task.jsp</result>
+			<result name="error">/jsps/taskAdd.jsp</result>
+		</action>
+		<action name="deleteTask" method="deleteTask"
+			class="com.pm.action.TaskDeleteAction">
+
+			<result name="success">/jsps/task.jsp</result>
+			<result name="error">/jsps/task.jsp</result>
+		</action>
+
+		<action name="viewMember" method="viewMember"
+			class="com.pm.action.MemberViewAction">
+
+			<result name="success">/jsps/member.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+
+
+		<action name="addMember" method="addMember" class="com.pm.action.MemberAddAction">
+			<result name="success">/jsps/member.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+
+
+	<action name="deleteMember" method="deleteMember" class="com.pm.action.MemberDeleteAction">
+			<result name="success">/jsps/member.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+	</package>
+</struts>
